@@ -1,6 +1,8 @@
 DBPrivacyHelper
 ===============
 
+![Alt text](http://bogodaniele.com/apps/development/dbprivacyhelper/github/privacy_rec.gif)
+
 Quick category to explain the right place to enable your privacy settings
 
 ## Integration
