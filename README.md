@@ -32,6 +32,11 @@ DBPrivacyHelper is a simple UIViewController category and it has a simple integr
 ```
 If ```useDefaultSettingPane:``` is set to YES, DBPrivacyHelper opens the default setting pane in iOS 8. Set NO if you want to see the ```DBPrivateHelperController``` with all iOS.
 
+Privacy settings types:
+- **DBPrivacyTypePhoto**
+- **DBPrivacyTypeCamera**
+- **DBPrivacyTypeLocation**
+
 ### iOS Target
 
 7.0
