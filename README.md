@@ -1,7 +1,7 @@
 DBPrivacyHelper
 ===============
 
-Quick tool to explain the right place to enable your privacy settings
+Quick category to explain the right place to enable your privacy settings
 
 ## Integration
 
@@ -36,7 +36,7 @@ If ```useDefaultSettingPane:``` is set to YES, DBPrivacyHelper opens the default
 
 ### Version
 
-0.1
+0.0.1
 
 ### Created by:
 
