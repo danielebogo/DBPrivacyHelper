@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DBPrivacyHelper"
-  s.version      = "0.0.1"
+  s.version      = "0.1"
   s.summary      = "Quick category to explain the right place to enable your privacy settings"
 
   s.description  = <<-DESC
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author             = { "Daniele Bogo" => "me@bogodaniele.com" }
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/danielebogo/DBPrivacyHelper.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/danielebogo/DBPrivacyHelper.git", :tag => "0.1" }
 
   s.source_files  = "DBPrivacyHelper/*.{h,m}"
   s.resources = ['DBPrivacyHelper/*.{xib,xcassets}', 'DBPrivacyHelper/DBPrivacyHelperLocalizations/**']

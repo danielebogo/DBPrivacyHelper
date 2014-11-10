@@ -11,9 +11,13 @@
 "Location Services" = "Location Services";
 "Photos" = "Photos";
 "Camera" = "Camera";
+"Health" = "Health";
+"HomeKit" = "HomeKit";
+"Motion Activity" = "Motion Activity";
 
-"Enable access to \"%@\"" = "Enable access to \"%@\"";
+"Allow access to \"%@\"\nwith these steps:" = "Allow access to \"%@\"\nwith these steps:";
 
 "Open device settings" = "Open device settings";
 "Tap on Privacy" = "Tap on Privacy";
-"Turn on \"%@\"" = "Turn on \"%@\"";
+"Tap on \"%@\"" = "Tap on \"%@\"";
+"Allow you application to use \"%@\"" = "Allow you application to use \"%@\"";

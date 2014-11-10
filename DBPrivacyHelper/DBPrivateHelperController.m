@@ -19,7 +19,7 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
     DBPrivacyType _type;
     UIImageView *_backgroundImage;
     UITableView *_tableView;
-    NSDictionary *_typeNames, *_iconNames;
+    NSDictionary *_typeNames, *_cellAttributes;
     NSArray *_cellData;
 }
 @end
@@ -36,19 +36,27 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
         _type = type;
         _canRotate = NO;
         _statusBarStyle = UIStatusBarStyleLightContent;
-
-        _typeNames = @{ @(DBPrivacyTypePhoto):@"Photos",
-                        @(DBPrivacyTypeCamera):@"Camera",
-                        @(DBPrivacyTypeLocation):@"Location Services" };
         
-        _iconNames = @{ @(DBPrivacyTypePhoto):@"dbph_photoIcon",
-                        @(DBPrivacyTypeCamera):@"dbph_cameraIcon",
-                        @(DBPrivacyTypeLocation):@"dbph_localizationIcon" };
-
-        NSString *titleText = DBPrivacyHelperLocalizableStrings(@"Turn on \"%@\"");
+        _typeNames = @{ @(DBPrivacyTypePhoto):@{ @"title":@"Photos", @"icon":@"dbph_photoIcon" },
+                        @(DBPrivacyTypeCamera):@{ @"title":@"Camera", @"icon":@"dbph_cameraIcon" },
+                        @(DBPrivacyTypeLocation):@{ @"title":@"Location Services", @"icon":@"dbph_localizationIcon" },
+                        @(DBPrivacyTypeHealth):@{ @"title":@"Health", @"icon":@"dbph_healthIcon" },
+                        @(DBPrivacyTypeHomeKit):@{ @"title":@"HomeKit", @"icon":@"dbph_homekitIcon" },
+                        @(DBPrivacyTypeMotionActivity):@{ @"title":@"Motion Activity", @"icon":@"dbph_motionIcon" }};
+        
+        NSString *titleText = DBPrivacyHelperLocalizableStrings(@"Tap on \"%@\"");
+        NSString *allowText = DBPrivacyHelperLocalizableStrings(@"Allow you application to use \"%@\"");
+        NSString *allowIcon = (_type == DBPrivacyTypeLocation) ? @"dbph_checkIcon" : @"dbph_switchIcon";
         _cellData = @[ @{ @"desc":@"Open device settings", @"icon":@"dbph_settingsIcon" },
                        @{ @"desc":@"Tap on Privacy", @"icon":@"dbph_privacyIcon" },
-                       @{ @"desc":[NSString stringWithFormat:titleText, _typeNames[@(_type)]], @"icon":_iconNames[@(_type)] } ];
+                       @{ @"desc":[NSString stringWithFormat:titleText, _typeNames[@(_type)][@"title"]], @"icon":_typeNames[@(_type)][@"icon"] },
+                       @{ @"desc":[NSString stringWithFormat:allowText, _typeNames[@(_type)][@"title"]], @"icon":allowIcon }];
+        
+        NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
+        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+        paragraphStyle.alignment = NSTextAlignmentLeft;
+        
+        _cellAttributes = @{ NSFontAttributeName:[UIFont boldSystemFontOfSize:12.0], NSParagraphStyleAttributeName:paragraphStyle };
     }
     return self;
 }
@@ -80,7 +88,7 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
         _backgroundImage.image = [self.snapshot applyDarkEffect];
     }
     
-    NSString *titleText = DBPrivacyHelperLocalizableStrings(@"Enable access to \"%@\"");
+    NSString *titleText = DBPrivacyHelperLocalizableStrings(@"Allow access to \"%@\"\nwith these steps:");
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:(CGRect){ 0, 0, CGRectGetWidth([[UIScreen mainScreen] bounds]), 80 }];
     titleLabel.backgroundColor = [UIColor clearColor];
@@ -88,7 +96,8 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
     titleLabel.textColor = [UIColor whiteColor];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    titleLabel.text = [NSString stringWithFormat:titleText, _typeNames[@(_type)]];
+    titleLabel.text = [NSString stringWithFormat:titleText, _typeNames[@(_type)][@"title"]];
+    titleLabel.numberOfLines = 2;
 
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     [_tableView registerClass:[DBPrivateHelperCell class] forCellReuseIdentifier:[DBPrivateHelperCell identifier]];
@@ -99,6 +108,7 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
     _tableView.tableHeaderView = titleLabel;
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    _tableView.scrollEnabled = NO;
     [self.view addSubview:_tableView];
     
     _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -136,6 +146,15 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
     // Dispose of any resources that can be recreated.
 }
 
+- (CGFloat) cellHeightForText:(NSString *)text {
+    CGFloat width = CGRectGetWidth(_tableView.frame) - 120.0;
+    CGRect bounds = [text boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin
+                                    attributes:_cellAttributes context:NULL];
+    
+    CGFloat height = roundf(CGRectGetHeight(bounds) + 20);
+    return ( height > 60.0 ) ? height + 10 : 60.0;
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -151,7 +170,7 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
 #pragma mark - UITableViewDelegate
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.0;
+    return [self cellHeightForText:_cellData[indexPath.row][@"desc"]];
 }
 
 #pragma mark - Status Bar Style

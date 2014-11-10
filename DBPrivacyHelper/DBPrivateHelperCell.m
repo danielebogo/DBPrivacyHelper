@@ -40,12 +40,13 @@
         _cellLabel.font = [UIFont boldSystemFontOfSize:12.0];
         _cellLabel.textColor = [UIColor whiteColor];
         _cellLabel.textAlignment = NSTextAlignmentLeft;
+        _cellLabel.numberOfLines = 0;
+        _cellLabel.lineBreakMode = NSLineBreakByWordWrapping;
         [self.contentView addSubview:_cellLabel];
         
         NSDictionary *views = NSDictionaryOfVariableBindings(_iconView, _cellLabel);
         
-        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-40-[_iconView(30)]-20-[_cellLabel]-10-|"
-                                                                                 options:0 metrics:nil views:views]];
+        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-40-[_iconView(30)]-20-[_cellLabel]-20-|" options:0 metrics:nil views:views]];
         [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_iconView(30)]"
                                                                                  options:0 metrics:nil views:views]];
         [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_cellLabel]-0-|"

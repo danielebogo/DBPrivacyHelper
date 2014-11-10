@@ -9,6 +9,19 @@
 #import <UIKit/UIKit.h>
 
 @interface DBPrivateHelperCell : UITableViewCell
+/**
+ *  Reuse Identifier for cell
+ *
+ *  @return An instance type of DBPrivateHelperCell
+ */
 + (NSString *) identifier;
+
+/**
+ *  Set the cell values
+ *
+ *  @param icon The icon
+ *  @param text The description text
+ *  @param row  The row number
+ */
 - (void) setIcon:(NSString *)icon text:(NSString *)text row:(NSInteger)row;
 @end
