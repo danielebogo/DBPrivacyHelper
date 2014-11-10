@@ -1,0 +1,19 @@
+/*
+ DBPrivacyHelperLocalizable.strings
+ DBPrivacyHelper
+ 
+ Created by iBo on 10/11/14.
+ Copyright (c) 2014 iBo. All rights reserved.
+*/
+
+"Close" = "Close";
+
+"Location Services" = "Location Services";
+"Photos" = "Photos";
+"Camera" = "Camera";
+
+"Enable access to \"%@\"" = "Enable access to \"%@\"";
+
+"Open device settings" = "Open device settings";
+"Tap on Privacy" = "Tap on Privacy";
+"Turn on \"%@\"" = "Turn on \"%@\"";
