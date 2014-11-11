@@ -46,7 +46,7 @@ Privacy settings types:
 
 ### Version
 
-0.1
+0.2
 
 ### Created by:
 

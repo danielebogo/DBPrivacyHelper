@@ -37,18 +37,18 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
         _canRotate = NO;
         _statusBarStyle = UIStatusBarStyleLightContent;
         
-        _typeNames = @{ @(DBPrivacyTypePhoto):@{ @"title":@"Photos", @"icon":@"dbph_photoIcon" },
-                        @(DBPrivacyTypeCamera):@{ @"title":@"Camera", @"icon":@"dbph_cameraIcon" },
-                        @(DBPrivacyTypeLocation):@{ @"title":@"Location Services", @"icon":@"dbph_localizationIcon" },
-                        @(DBPrivacyTypeHealth):@{ @"title":@"Health", @"icon":@"dbph_healthIcon" },
-                        @(DBPrivacyTypeHomeKit):@{ @"title":@"HomeKit", @"icon":@"dbph_homekitIcon" },
-                        @(DBPrivacyTypeMotionActivity):@{ @"title":@"Motion Activity", @"icon":@"dbph_motionIcon" }};
+        _typeNames = @{ @(DBPrivacyTypePhoto):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Photos"), @"icon":@"dbph_photoIcon" },
+                        @(DBPrivacyTypeCamera):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Camera"), @"icon":@"dbph_cameraIcon" },
+                        @(DBPrivacyTypeLocation):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Location Services"), @"icon":@"dbph_localizationIcon" },
+                        @(DBPrivacyTypeHealth):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Health"), @"icon":@"dbph_healthIcon" },
+                        @(DBPrivacyTypeHomeKit):@{ @"title":DBPrivacyHelperLocalizableStrings(@"HomeKit"), @"icon":@"dbph_homekitIcon" },
+                        @(DBPrivacyTypeMotionActivity):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Motion Activity"), @"icon":@"dbph_motionIcon" }};
         
         NSString *titleText = DBPrivacyHelperLocalizableStrings(@"Tap on \"%@\"");
-        NSString *allowText = DBPrivacyHelperLocalizableStrings(@"Allow you application to use \"%@\"");
+        NSString *allowText = DBPrivacyHelperLocalizableStrings(@"Allow your application to use \"%@\"");
         NSString *allowIcon = (_type == DBPrivacyTypeLocation) ? @"dbph_checkIcon" : @"dbph_switchIcon";
-        _cellData = @[ @{ @"desc":@"Open device settings", @"icon":@"dbph_settingsIcon" },
-                       @{ @"desc":@"Tap on Privacy", @"icon":@"dbph_privacyIcon" },
+        _cellData = @[ @{ @"desc":DBPrivacyHelperLocalizableStrings(@"Open device settings"), @"icon":@"dbph_settingsIcon" },
+                       @{ @"desc":DBPrivacyHelperLocalizableStrings(@"Tap on Privacy"), @"icon":@"dbph_privacyIcon" },
                        @{ @"desc":[NSString stringWithFormat:titleText, _typeNames[@(_type)][@"title"]], @"icon":_typeNames[@(_type)][@"icon"] },
                        @{ @"desc":[NSString stringWithFormat:allowText, _typeNames[@(_type)][@"title"]], @"icon":allowIcon }];
         

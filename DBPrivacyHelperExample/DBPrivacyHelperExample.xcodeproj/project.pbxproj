@@ -32,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A2E193E1A1233DB001F6618 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
 		9AE88CF61A10C4AE00086242 /* DBPrivacyHelperExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBPrivacyHelperExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE88CFA1A10C4AE00086242 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AE88CFB1A10C4AE00086242 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -224,6 +225,7 @@
 				en,
 				Base,
 				it,
+				es,
 			);
 			mainGroup = 9AE88CED1A10C4AE00086242;
 			productRefGroup = 9AE88CF71A10C4AE00086242 /* Products */;
@@ -296,6 +298,7 @@
 			children = (
 				9AE88D3B1A11050D00086242 /* en */,
 				9AE88D3C1A11050D00086242 /* it */,
+				9A2E193E1A1233DB001F6618 /* es */,
 			);
 			name = DBPrivacyHelperLocalizable.strings;
 			sourceTree = "<group>";
