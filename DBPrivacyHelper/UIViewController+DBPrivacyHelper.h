@@ -32,4 +32,10 @@
                        didPresent:(DBPrivateHelperCompletionBlock)didPresent
                        didDismiss:(DBPrivateHelperCompletionBlock)didDismiss
             useDefaultSettingPane:(BOOL)defaultSettingPane;
+/**
+ *  Snapshot of your Window
+ *
+ *  @return An UIImage of your Window
+ */
+- (UIImage *) snapshot;
 @end

@@ -54,6 +54,7 @@
 
 - (void) openHelper {
     [self showPrivacyHelperForType:DBPrivacyTypeLocation];
+//    [self openHelperToCustomize];
 }
 
 - (void) openHelperToCustomize {
@@ -63,7 +64,7 @@
         //customize the completion block of presentViewController:animated:completion:
     } didDismiss:^{
         //customize the completion block of dismissViewControllerAnimated:completion:
-    } useDefaultSettingPane:YES];
+    } useDefaultSettingPane:YES]; //If NO force to use DBPrivateHelperController instead of the default settings pane on iOS 8. Only for iOS 8. Default value is YES.
 }
 
 @end

@@ -77,13 +77,15 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
         UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
         blurEffectView.frame = _backgroundImage.bounds;
         blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        [_backgroundImage addSubview:blurEffectView];
+//        [_backgroundImage addSubview:blurEffectView];
         
         UIVibrancyEffect *vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:blurEffect];
         UIVisualEffectView *vibrancyEffectView = [[UIVisualEffectView alloc] initWithEffect:vibrancyEffect];
         vibrancyEffectView.frame = _backgroundImage.bounds;
         vibrancyEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        [_backgroundImage addSubview:vibrancyEffectView];
+        
+        [blurEffectView.contentView addSubview:vibrancyEffectView];
+        [_backgroundImage addSubview:blurEffectView];
     } else {
         _backgroundImage.image = [self.snapshot applyDarkEffect];
     }

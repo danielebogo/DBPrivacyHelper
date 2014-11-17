@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A59AE631A1A617600005D4A /* DBPrivacyHelper.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9A59AE621A1A617600005D4A /* DBPrivacyHelper.podspec */; };
 		9AE88CFC1A10C4AE00086242 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE88CFB1A10C4AE00086242 /* main.m */; };
 		9AE88CFF1A10C4AE00086242 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE88CFE1A10C4AE00086242 /* AppDelegate.m */; };
 		9AE88D021A10C4AE00086242 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE88D011A10C4AE00086242 /* ViewController.m */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		9A2E193E1A1233DB001F6618 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
+		9A59AE621A1A617600005D4A /* DBPrivacyHelper.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DBPrivacyHelper.podspec; path = ../../DBPrivacyHelper.podspec; sourceTree = "<group>"; };
 		9AE88CF61A10C4AE00086242 /* DBPrivacyHelperExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBPrivacyHelperExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE88CFA1A10C4AE00086242 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AE88CFB1A10C4AE00086242 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		9AE88CF81A10C4AE00086242 /* DBPrivacyHelperExample */ = {
 			isa = PBXGroup;
 			children = (
+				9A59AE621A1A617600005D4A /* DBPrivacyHelper.podspec */,
 				9AE88D371A11050D00086242 /* DBPrivacyHelper */,
 				9AE88D211A10C53900086242 /* AppAsets.xcassets */,
 				9AE88CFD1A10C4AE00086242 /* AppDelegate.h */,
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AE88D441A11050D00086242 /* DBPrivacyHelperLocalizable.strings in Resources */,
+				9A59AE631A1A617600005D4A /* DBPrivacyHelper.podspec in Resources */,
 				9AE88D221A10C53900086242 /* AppAsets.xcassets in Resources */,
 				9AE88D321A10FEA000086242 /* bg.jpg in Resources */,
 				9AE88D431A11050D00086242 /* DBPrivacyHelperAssets.xcassets in Resources */,
