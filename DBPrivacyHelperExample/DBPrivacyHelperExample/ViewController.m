@@ -53,7 +53,9 @@
 }
 
 - (void) openHelper {
-    [self showPrivacyHelperForType:DBPrivacyTypeLocation];
+    static DBPrivacyType type, typeCount = DBPrivacyTypeMotionActivity + 1;
+    [self showPrivacyHelperForType:type];
+    type = (type + 1) % typeCount;
 //    [self openHelperToCustomize];
 }
 
