@@ -58,6 +58,7 @@
 		9AE88D421A11050D00086242 /* UIViewController+DBPrivacyHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DBPrivacyHelper.m"; sourceTree = "<group>"; };
 		9AE88D481A11100700086242 /* DBPrivateHelperCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPrivateHelperCell.h; sourceTree = "<group>"; };
 		9AE88D491A11100700086242 /* DBPrivateHelperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPrivateHelperCell.m; sourceTree = "<group>"; };
+		B5C9AE611A3B46F200082D01 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/DBPrivacyHelperLocalizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +230,7 @@
 				Base,
 				it,
 				es,
+				"zh-Hant",
 			);
 			mainGroup = 9AE88CED1A10C4AE00086242;
 			productRefGroup = 9AE88CF71A10C4AE00086242 /* Products */;
@@ -303,6 +305,7 @@
 				9AE88D3B1A11050D00086242 /* en */,
 				9AE88D3C1A11050D00086242 /* it */,
 				9A2E193E1A1233DB001F6618 /* es */,
+				B5C9AE611A3B46F200082D01 /* zh-Hant */,
 			);
 			name = DBPrivacyHelperLocalizable.strings;
 			sourceTree = "<group>";

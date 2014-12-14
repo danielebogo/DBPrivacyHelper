@@ -1,0 +1,23 @@
+/*
+ DBPrivacyHelperLocalizable.strings
+ DBPrivacyHelper
+
+ Created by Ben on 10/11/14.
+ Copyright (c) 2014 bcylin. All rights reserved.
+*/
+
+"Close" = "關閉";
+
+"Location Services" = "定位服務";
+"Photos" = "照片";
+"Camera" = "相機";
+"Health" = "健康";
+"HomeKit" = "HomeKit";  // It's also called HomeKit in zh-Hant
+"Motion Activity" = "運動紀錄";
+
+"Allow access to \"%@\"\nwith these steps:" = "根據以下步驟\n開啟「%@」功能";
+
+"Open device settings" = "開啟裝置的設定";
+"Tap on Privacy" = "選擇「隱私」";
+"Tap on \"%@\"" = "選擇「%@」";
+"Allow your application to use \"%@\"" = "允許應用程式使用「%@」";
