@@ -39,6 +39,7 @@ Privacy settings types:
 - **DBPrivacyTypeHealth**
 - **DBPrivacyTypeHomeKit**
 - **DBPrivacyTypeMotionActivity**
+- **DBPrivacyTypeContacts**
 
 ### iOS Target
 
@@ -46,7 +47,7 @@ Privacy settings types:
 
 ### Version
 
-0.4
+0.5
 
 ### Created by:
 
