@@ -53,7 +53,7 @@
 }
 
 - (void) openHelper {
-    static DBPrivacyType type, typeCount = DBPrivacyTypeMotionActivity + 1;
+    static DBPrivacyType type, typeCount = DBPrivacyTypeContacts + 1;
     [self showPrivacyHelperForType:type];
     type = (type + 1) % typeCount;
 //    [self openHelperToCustomize];

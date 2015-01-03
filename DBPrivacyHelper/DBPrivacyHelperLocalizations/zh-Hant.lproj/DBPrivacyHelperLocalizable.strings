@@ -14,6 +14,7 @@
 "Health" = "健康";
 "HomeKit" = "HomeKit";  // It's also called HomeKit in zh-Hant
 "Motion Activity" = "運動紀錄";
+"Contacts" = "聯絡資訊";
 
 "Allow access to \"%@\"\nwith these steps:" = "根據以下步驟\n開啟「%@」功能";
 

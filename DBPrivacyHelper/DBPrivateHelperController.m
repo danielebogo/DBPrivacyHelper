@@ -36,14 +36,15 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
         _type = type;
         _canRotate = NO;
         _statusBarStyle = UIStatusBarStyleLightContent;
-        
+
         _typeNames = @{ @(DBPrivacyTypePhoto):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Photos"), @"icon":@"dbph_photoIcon" },
                         @(DBPrivacyTypeCamera):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Camera"), @"icon":@"dbph_cameraIcon" },
                         @(DBPrivacyTypeLocation):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Location Services"), @"icon":@"dbph_localizationIcon" },
                         @(DBPrivacyTypeHealth):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Health"), @"icon":@"dbph_healthIcon" },
                         @(DBPrivacyTypeHomeKit):@{ @"title":DBPrivacyHelperLocalizableStrings(@"HomeKit"), @"icon":@"dbph_homekitIcon" },
-                        @(DBPrivacyTypeMotionActivity):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Motion Activity"), @"icon":@"dbph_motionIcon" }};
-        
+                        @(DBPrivacyTypeMotionActivity):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Motion Activity"), @"icon":@"dbph_motionIcon" },
+                        @(DBPrivacyTypeContacts):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Contacts"), @"icon":@"dbph_contactsIcon" }};
+
         NSString *titleText = DBPrivacyHelperLocalizableStrings(@"Tap on \"%@\"");
         NSString *allowText = DBPrivacyHelperLocalizableStrings(@"Allow your application to use \"%@\"");
         NSString *allowIcon = (_type == DBPrivacyTypeLocation) ? @"dbph_checkIcon" : @"dbph_switchIcon";
@@ -51,11 +52,11 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
                        @{ @"desc":DBPrivacyHelperLocalizableStrings(@"Tap on Privacy"), @"icon":@"dbph_privacyIcon" },
                        @{ @"desc":[NSString stringWithFormat:titleText, _typeNames[@(_type)][@"title"]], @"icon":_typeNames[@(_type)][@"icon"] },
                        @{ @"desc":[NSString stringWithFormat:allowText, _typeNames[@(_type)][@"title"]], @"icon":allowIcon }];
-        
+
         NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
         paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
         paragraphStyle.alignment = NSTextAlignmentLeft;
-        
+
         _cellAttributes = @{ NSFontAttributeName:[UIFont boldSystemFontOfSize:12.0], NSParagraphStyleAttributeName:paragraphStyle };
     }
     return self;
@@ -65,33 +66,33 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    
+
     _backgroundImage = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     _backgroundImage.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_backgroundImage];
-    
+
     if ( IS_IOS_8 ) {
         _backgroundImage.image = self.snapshot;
-        
+
         UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
         UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
         blurEffectView.frame = _backgroundImage.bounds;
         blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 //        [_backgroundImage addSubview:blurEffectView];
-        
+
         UIVibrancyEffect *vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:blurEffect];
         UIVisualEffectView *vibrancyEffectView = [[UIVisualEffectView alloc] initWithEffect:vibrancyEffect];
         vibrancyEffectView.frame = _backgroundImage.bounds;
         vibrancyEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
+
         [blurEffectView.contentView addSubview:vibrancyEffectView];
         [_backgroundImage addSubview:blurEffectView];
     } else {
         _backgroundImage.image = [self.snapshot applyDarkEffect];
     }
-    
+
     NSString *titleText = DBPrivacyHelperLocalizableStrings(@"Allow access to \"%@\"\nwith these steps:");
-    
+
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:(CGRect){ 0, 0, CGRectGetWidth([[UIScreen mainScreen] bounds]), 80 }];
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.font = [UIFont boldSystemFontOfSize:14.0];
@@ -112,7 +113,7 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
     _tableView.delegate = self;
     _tableView.scrollEnabled = NO;
     [self.view addSubview:_tableView];
-    
+
     _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _closeButton.translatesAutoresizingMaskIntoConstraints = NO;
     _closeButton.titleLabel.font = [UIFont boldSystemFontOfSize:12.0];
@@ -121,9 +122,9 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
     [_closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_closeButton addTarget:self action:@selector(dismissHelper:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_closeButton];
-    
+
     NSDictionary *views = NSDictionaryOfVariableBindings(_tableView, _closeButton);
-    
+
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[_closeButton]-20-|" options:0 metrics:nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_tableView]-0-|" options:0 metrics:nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_closeButton(30)]-0-[_tableView]-0-|" options:0 metrics:nil views:views]];
@@ -152,7 +153,7 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
     CGFloat width = CGRectGetWidth(_tableView.frame) - 120.0;
     CGRect bounds = [text boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin
                                     attributes:_cellAttributes context:NULL];
-    
+
     CGFloat height = roundf(CGRectGetHeight(bounds) + 20);
     return ( height > 60.0 ) ? height + 10 : 60.0;
 }

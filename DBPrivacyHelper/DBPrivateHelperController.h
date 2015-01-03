@@ -42,7 +42,11 @@ typedef NS_ENUM(NSUInteger, DBPrivacyType){
     /**
      *  Motion Activity
      */
-    DBPrivacyTypeMotionActivity
+    DBPrivacyTypeMotionActivity,
+    /**
+     *  Access to Contacts
+     */
+    DBPrivacyTypeContacts
 };
 
 @interface DBPrivateHelperController : UIViewController

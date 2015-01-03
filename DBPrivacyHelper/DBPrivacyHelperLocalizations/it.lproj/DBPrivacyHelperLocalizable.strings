@@ -1,4 +1,4 @@
-/* 
+/*
  DBPrivacyHelperLocalizable.strings
  DBPrivacyHelper
 
@@ -14,6 +14,7 @@
 "Health" = "Salute";
 "HomeKit" = "HomeKit";
 "Motion Activity" = "Attività motoria";
+"Contacts" = "Contatti";
 
 "Allow access to \"%@\"\nwith these steps:" = "Abilita l'accesso a \"%@\"\nin questo modo:";
 
