@@ -1,0 +1,23 @@
+/*
+ DBPrivacyHelperLocalizable.strings
+ DBPrivacyHelper
+ 
+ Created by iBo on 10/11/14.
+ Copyright (c) 2014 iBo. All rights reserved.
+*/
+
+"Close" = "닫기";
+
+"Location Services" = "위치 서비스;
+"Photos" = "사진";
+"Camera" = "카메라";
+"Health" = "건강";
+"HomeKit" = "HomeKit";
+"Motion Activity" = "동작 활동";
+
+"Allow access to \"%@\"\nwith these steps:" = "다음과 같은 순서로 \"%@\"\n 접근 허락";
+
+"Open device settings" = "기기 설정 열기";
+"Tap on Privacy" = "정책 터치";
+"Tap on \"%@\"" = "\"%@\" 터치 ";
+"Allow your application to use \"%@\"" = "어플리케이션의 \"%@\" 사용 허락";
