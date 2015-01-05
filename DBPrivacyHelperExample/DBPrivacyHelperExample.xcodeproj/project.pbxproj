@@ -33,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D8897741A5A1F5200AE811F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
 		9A2E193E1A1233DB001F6618 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
 		9A59AE621A1A617600005D4A /* DBPrivacyHelper.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DBPrivacyHelper.podspec; path = ../../DBPrivacyHelper.podspec; sourceTree = "<group>"; };
 		9AE88CF61A10C4AE00086242 /* DBPrivacyHelperExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBPrivacyHelperExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +232,7 @@
 				it,
 				es,
 				"zh-Hant",
+				ko,
 			);
 			mainGroup = 9AE88CED1A10C4AE00086242;
 			productRefGroup = 9AE88CF71A10C4AE00086242 /* Products */;
@@ -306,6 +308,7 @@
 				9AE88D3C1A11050D00086242 /* it */,
 				9A2E193E1A1233DB001F6618 /* es */,
 				B5C9AE611A3B46F200082D01 /* zh-Hant */,
+				2D8897741A5A1F5200AE811F /* ko */,
 			);
 			name = DBPrivacyHelperLocalizable.strings;
 			sourceTree = "<group>";
