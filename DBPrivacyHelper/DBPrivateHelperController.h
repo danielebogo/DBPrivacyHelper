@@ -10,44 +10,12 @@
 
 @import UIKit;
 
+#import "DBPrivacyHelperDataSource.h"
+
 /**
  *  Dismiss completion block
  */
 typedef void (^DBPrivateHelperCompletionBlock)();
-
-/**
- *  Privacy Types
- */
-typedef NS_ENUM(NSUInteger, DBPrivacyType){
-    /**
-     *  Photos within camera roll
-     */
-    DBPrivacyTypePhoto,
-    /**
-     *  Use the Camera
-     */
-    DBPrivacyTypeCamera,
-    /**
-     *  Location Services
-     */
-    DBPrivacyTypeLocation,
-    /**
-     *  HealthKit
-     */
-    DBPrivacyTypeHealth,
-    /**
-     *  HomeKit
-     */
-    DBPrivacyTypeHomeKit,
-    /**
-     *  Motion Activity
-     */
-    DBPrivacyTypeMotionActivity,
-    /**
-     *  Access to Contacts
-     */
-    DBPrivacyTypeContacts
-};
 
 @interface DBPrivateHelperController : UIViewController
 
@@ -70,6 +38,11 @@ typedef NS_ENUM(NSUInteger, DBPrivacyType){
  *  The snapshot of the window
  */
 @property (nonatomic, strong) UIImage *snapshot;
+
+/**
+ *  Personal App Icon name for DBPrivacyTypeNotifications
+ */
+@property (nonatomic, strong) NSString *appIcon;
 
 /**
  *  The dismiss completion block

@@ -7,20 +7,16 @@
 //
 
 #import "DBPrivateHelperController.h"
+#import "DBPrivacyHelperDataSource.h"
 #import "DBPrivateHelperCell.h"
 #import "UIImage+ImageEffects.h"
 
-#ifndef DBPrivacyHelperLocalizableStrings
-#define DBPrivacyHelperLocalizableStrings(key) \
-NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
-#endif
-
 @interface DBPrivateHelperController () <UITableViewDataSource, UITableViewDelegate> {
     DBPrivacyType _type;
+    DBPrivacyHelperDataSource *_dataSource;
     UIImageView *_backgroundImage;
     UITableView *_tableView;
-    NSDictionary *_typeNames, *_cellAttributes;
-    NSArray *_cellData;
+    NSDictionary *_cellAttributes;
 }
 @end
 
@@ -36,23 +32,7 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
         _type = type;
         _canRotate = NO;
         _statusBarStyle = UIStatusBarStyleLightContent;
-
-        _typeNames = @{ @(DBPrivacyTypePhoto):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Photos"), @"icon":@"dbph_photoIcon" },
-                        @(DBPrivacyTypeCamera):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Camera"), @"icon":@"dbph_cameraIcon" },
-                        @(DBPrivacyTypeLocation):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Location Services"), @"icon":@"dbph_localizationIcon" },
-                        @(DBPrivacyTypeHealth):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Health"), @"icon":@"dbph_healthIcon" },
-                        @(DBPrivacyTypeHomeKit):@{ @"title":DBPrivacyHelperLocalizableStrings(@"HomeKit"), @"icon":@"dbph_homekitIcon" },
-                        @(DBPrivacyTypeMotionActivity):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Motion Activity"), @"icon":@"dbph_motionIcon" },
-                        @(DBPrivacyTypeContacts):@{ @"title":DBPrivacyHelperLocalizableStrings(@"Contacts"), @"icon":@"dbph_contactsIcon" }};
-
-        NSString *titleText = DBPrivacyHelperLocalizableStrings(@"Tap on \"%@\"");
-        NSString *allowText = DBPrivacyHelperLocalizableStrings(@"Allow your application to use \"%@\"");
-        NSString *allowIcon = (_type == DBPrivacyTypeLocation) ? @"dbph_checkIcon" : @"dbph_switchIcon";
-        _cellData = @[ @{ @"desc":DBPrivacyHelperLocalizableStrings(@"Open device settings"), @"icon":@"dbph_settingsIcon" },
-                       @{ @"desc":DBPrivacyHelperLocalizableStrings(@"Tap on Privacy"), @"icon":@"dbph_privacyIcon" },
-                       @{ @"desc":[NSString stringWithFormat:titleText, _typeNames[@(_type)][@"title"]], @"icon":_typeNames[@(_type)][@"icon"] },
-                       @{ @"desc":[NSString stringWithFormat:allowText, _typeNames[@(_type)][@"title"]], @"icon":allowIcon }];
-
+        
         NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
         paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
         paragraphStyle.alignment = NSTextAlignmentLeft;
@@ -66,7 +46,10 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-
+    
+    _dataSource = [DBPrivacyHelperDataSource new];
+    _dataSource.appIcon = self.appIcon;
+    
     _backgroundImage = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     _backgroundImage.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_backgroundImage];
@@ -91,15 +74,13 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
         _backgroundImage.image = [self.snapshot applyDarkEffect];
     }
 
-    NSString *titleText = DBPrivacyHelperLocalizableStrings(@"Allow access to \"%@\"\nwith these steps:");
-
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:(CGRect){ 0, 0, CGRectGetWidth([[UIScreen mainScreen] bounds]), 80 }];
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.font = [UIFont boldSystemFontOfSize:14.0];
     titleLabel.textColor = [UIColor whiteColor];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    titleLabel.text = [NSString stringWithFormat:titleText, _typeNames[@(_type)][@"title"]];
+    titleLabel.text = _dataSource.cellData[@(_type)][@"header"];
     titleLabel.numberOfLines = 2;
 
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
@@ -118,7 +99,7 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
     _closeButton.translatesAutoresizingMaskIntoConstraints = NO;
     _closeButton.titleLabel.font = [UIFont boldSystemFontOfSize:12.0];
     _closeButton.backgroundColor = [UIColor clearColor];
-    [_closeButton setTitle:DBPrivacyHelperLocalizableStrings(@"Close").uppercaseString forState:UIControlStateNormal];
+    [_closeButton setTitle:[@"Close" localizedString].uppercaseString forState:UIControlStateNormal];
     [_closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_closeButton addTarget:self action:@selector(dismissHelper:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_closeButton];
@@ -161,19 +142,21 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
 #pragma mark - UITableViewDataSource
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _cellData.count;
+    return [_dataSource.cellData[@(_type)][@"steps"] count];
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DBPrivateHelperCell *cell = [tableView dequeueReusableCellWithIdentifier:[DBPrivateHelperCell identifier]];
-    [cell setIcon:_cellData[indexPath.row][@"icon"] text:_cellData[indexPath.row][@"desc"] row:indexPath.row + 1];
+    [cell setIcon:_dataSource.cellData[@(_type)][@"steps"][indexPath.row][@"icon"]
+             text:_dataSource.cellData[@(_type)][@"steps"][indexPath.row][@"desc"]
+              row:indexPath.row + 1];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self cellHeightForText:_cellData[indexPath.row][@"desc"]];
+    return [self cellHeightForText:_dataSource.cellData[@(_type)][@"steps"][indexPath.row][@"desc"]];
 }
 
 #pragma mark - Status Bar Style

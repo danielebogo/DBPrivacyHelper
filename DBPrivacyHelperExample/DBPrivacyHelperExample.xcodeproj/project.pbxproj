@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9A59AE631A1A617600005D4A /* DBPrivacyHelper.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9A59AE621A1A617600005D4A /* DBPrivacyHelper.podspec */; };
+		9AD85B141A5C707F003F80D6 /* DBPrivacyHelperDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD85B131A5C707F003F80D6 /* DBPrivacyHelperDataSource.m */; };
+		9AD85B161A5C8861003F80D6 /* testIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD85B151A5C8861003F80D6 /* testIcon.png */; };
 		9AE88CFC1A10C4AE00086242 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE88CFB1A10C4AE00086242 /* main.m */; };
 		9AE88CFF1A10C4AE00086242 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE88CFE1A10C4AE00086242 /* AppDelegate.m */; };
 		9AE88D021A10C4AE00086242 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE88D011A10C4AE00086242 /* ViewController.m */; };
@@ -35,6 +37,9 @@
 /* Begin PBXFileReference section */
 		9A2E193E1A1233DB001F6618 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
 		9A59AE621A1A617600005D4A /* DBPrivacyHelper.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DBPrivacyHelper.podspec; path = ../../DBPrivacyHelper.podspec; sourceTree = "<group>"; };
+		9AD85B121A5C707F003F80D6 /* DBPrivacyHelperDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPrivacyHelperDataSource.h; sourceTree = "<group>"; };
+		9AD85B131A5C707F003F80D6 /* DBPrivacyHelperDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPrivacyHelperDataSource.m; sourceTree = "<group>"; };
+		9AD85B151A5C8861003F80D6 /* testIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIcon.png; sourceTree = "<group>"; };
 		9AE88CF61A10C4AE00086242 /* DBPrivacyHelperExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBPrivacyHelperExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE88CFA1A10C4AE00086242 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AE88CFB1A10C4AE00086242 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 				9AE88CFE1A10C4AE00086242 /* AppDelegate.m */,
 				9AE88D001A10C4AE00086242 /* ViewController.h */,
 				9AE88D011A10C4AE00086242 /* ViewController.m */,
+				9AD85B151A5C8861003F80D6 /* testIcon.png */,
 				9AE88D311A10FEA000086242 /* bg.jpg */,
 				9AE88CF91A10C4AE00086242 /* Supporting Files */,
 			);
@@ -144,6 +150,8 @@
 			children = (
 				9AE88D391A11050D00086242 /* DBPrivacyHelperLocalizations */,
 				9AE88D381A11050D00086242 /* DBPrivacyHelperAssets.xcassets */,
+				9AD85B121A5C707F003F80D6 /* DBPrivacyHelperDataSource.h */,
+				9AD85B131A5C707F003F80D6 /* DBPrivacyHelperDataSource.m */,
 				9AE88D3D1A11050D00086242 /* DBPrivateHelperController.h */,
 				9AE88D3E1A11050D00086242 /* DBPrivateHelperController.m */,
 				9AE88D481A11100700086242 /* DBPrivateHelperCell.h */,
@@ -253,6 +261,7 @@
 				9AE88D221A10C53900086242 /* AppAsets.xcassets in Resources */,
 				9AE88D321A10FEA000086242 /* bg.jpg in Resources */,
 				9AE88D431A11050D00086242 /* DBPrivacyHelperAssets.xcassets in Resources */,
+				9AD85B161A5C8861003F80D6 /* testIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +284,7 @@
 				9AE88CFF1A10C4AE00086242 /* AppDelegate.m in Sources */,
 				9AE88D4A1A11100700086242 /* DBPrivateHelperCell.m in Sources */,
 				9AE88CFC1A10C4AE00086242 /* main.m in Sources */,
+				9AD85B141A5C707F003F80D6 /* DBPrivacyHelperDataSource.m in Sources */,
 				9AE88D451A11050D00086242 /* DBPrivateHelperController.m in Sources */,
 				9AE88D471A11050D00086242 /* UIViewController+DBPrivacyHelper.m in Sources */,
 			);

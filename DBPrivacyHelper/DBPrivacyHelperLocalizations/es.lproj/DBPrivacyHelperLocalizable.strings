@@ -15,6 +15,7 @@
 "HomeKit" = "HomeKit";
 "Motion Activity" = "Actividad física";
 "Contacts" = "Contactos";
+"Notifications" = "Notificaciones";
 
 "Allow access to \"%@\"\nwith these steps:" = "Para habilitar el acceso a \"%@\"\nprocede de la siguiente manera:";
 
@@ -22,3 +23,4 @@
 "Tap on Privacy" = "Selecciona Privacidad";
 "Tap on \"%@\"" = "Selecciona \"%@\"";
 "Allow your application to use \"%@\"" = "Permitir a tu aplicación usar \"%@\"";
+"Select the alert style you prefer" = "Seleccionar el tipo de alerta que prefieras";

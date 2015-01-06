@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+DBPrivacyHelper.h"
+#import <objc/runtime.h>
 
 @implementation UIViewController (DBPrivacyHelper)
 
@@ -28,6 +29,7 @@
     }
     
     DBPrivateHelperController *vc = [DBPrivateHelperController helperForType:type];
+    vc.appIcon = self.appIcon;
     vc.didDismissViewController = didDismiss;
     vc.snapshot = [self snapshot];
     vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
@@ -51,6 +53,14 @@
     UIGraphicsEndImageContext();
     
     return snapshotImage;
+}
+
+- (void) setAppIcon:(NSString *)appIcon {
+    objc_setAssociatedObject(self, @"kAppIcon", appIcon, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSString *) appIcon {
+    return objc_getAssociatedObject(self, @"kAppIcon");
 }
 
 @end

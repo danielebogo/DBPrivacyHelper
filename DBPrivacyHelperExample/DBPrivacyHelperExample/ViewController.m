@@ -53,10 +53,9 @@
 }
 
 - (void) openHelper {
-    static DBPrivacyType type, typeCount = DBPrivacyTypeContacts + 1;
+    static DBPrivacyType type, typeCount = DBPrivacyTypeNotifications + 1;
     [self showPrivacyHelperForType:type];
     type = (type + 1) % typeCount;
-//    [self openHelperToCustomize];
 }
 
 - (void) openHelperToCustomize {
@@ -67,6 +66,11 @@
     } didDismiss:^{
         //customize the completion block of dismissViewControllerAnimated:completion:
     } useDefaultSettingPane:YES]; //If NO force to use DBPrivateHelperController instead of the default settings pane on iOS 8. Only for iOS 8. Default value is YES.
+}
+
+- (void) openNotificationHelper {
+    self.appIcon = @"testIcon";
+    [self showPrivacyHelperForType:DBPrivacyTypeNotifications];
 }
 
 @end

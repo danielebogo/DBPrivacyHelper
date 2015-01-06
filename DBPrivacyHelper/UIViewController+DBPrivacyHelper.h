@@ -13,6 +13,11 @@
 
 @interface UIViewController (DBPrivacyHelper)
 /**
+ *  Personal App Icon name for DBPrivacyTypeNotifications
+ */
+@property (nonatomic, strong) NSString *appIcon;
+
+/**
  *  Show the privacy helper
  *
  *  @param type The type of privacy

@@ -15,6 +15,7 @@
 "HomeKit" = "HomeKit";
 "Motion Activity" = "Motion Activity";
 "Contacts" = "Contacts";
+"Notifications" = "Notifications";
 
 "Allow access to \"%@\"\nwith these steps:" = "Allow access to \"%@\"\nwith these steps:";
 
@@ -22,3 +23,4 @@
 "Tap on Privacy" = "Tap on Privacy";
 "Tap on \"%@\"" = "Tap on \"%@\"";
 "Allow your application to use \"%@\"" = "Allow your application to use \"%@\"";
+"Select the alert style you prefer" = "Select the alert style you prefer";
