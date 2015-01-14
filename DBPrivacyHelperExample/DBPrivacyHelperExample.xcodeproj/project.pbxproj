@@ -66,7 +66,7 @@
 		9AE88D481A11100700086242 /* DBPrivateHelperCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPrivateHelperCell.h; sourceTree = "<group>"; };
 		9AE88D491A11100700086242 /* DBPrivateHelperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPrivateHelperCell.m; sourceTree = "<group>"; };
 		B5C9AE611A3B46F200082D01 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/DBPrivacyHelperLocalizable.strings"; sourceTree = "<group>"; };
-		EBF7EF5D1A66CF32004C5784 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
+		EBF7EF601A66DA87004C5784 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/DBPrivacyHelperLocalizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +243,7 @@
 				es,
 				"zh-Hant",
 				ko,
-				pt,
+				"pt-PT",
 			);
 			mainGroup = 9AE88CED1A10C4AE00086242;
 			productRefGroup = 9AE88CF71A10C4AE00086242 /* Products */;
@@ -323,7 +323,7 @@
 				9A2E193E1A1233DB001F6618 /* es */,
 				B5C9AE611A3B46F200082D01 /* zh-Hant */,
 				2D8897741A5A1F5200AE811F /* ko */,
-				EBF7EF5D1A66CF32004C5784 /* pt */,
+				EBF7EF601A66DA87004C5784 /* pt-PT */,
 			);
 			name = DBPrivacyHelperLocalizable.strings;
 			sourceTree = "<group>";
