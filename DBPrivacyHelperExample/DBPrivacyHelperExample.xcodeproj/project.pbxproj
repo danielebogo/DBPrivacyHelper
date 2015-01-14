@@ -22,6 +22,7 @@
 		9AE88D461A11050D00086242 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE88D401A11050D00086242 /* UIImage+ImageEffects.m */; };
 		9AE88D471A11050D00086242 /* UIViewController+DBPrivacyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE88D421A11050D00086242 /* UIViewController+DBPrivacyHelper.m */; };
 		9AE88D4A1A11100700086242 /* DBPrivateHelperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE88D491A11100700086242 /* DBPrivateHelperCell.m */; };
+		EBF7EF5F1A66D212004C5784 /* DBPrivacyHelperLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AE88D3A1A11050D00086242 /* DBPrivacyHelperLocalizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		9AE88D481A11100700086242 /* DBPrivateHelperCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPrivateHelperCell.h; sourceTree = "<group>"; };
 		9AE88D491A11100700086242 /* DBPrivateHelperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPrivateHelperCell.m; sourceTree = "<group>"; };
 		B5C9AE611A3B46F200082D01 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/DBPrivacyHelperLocalizable.strings"; sourceTree = "<group>"; };
+		EBF7EF5D1A66CF32004C5784 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 				es,
 				"zh-Hant",
 				ko,
+				pt,
 			);
 			mainGroup = 9AE88CED1A10C4AE00086242;
 			productRefGroup = 9AE88CF71A10C4AE00086242 /* Products */;
@@ -271,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF7EF5F1A66D212004C5784 /* DBPrivacyHelperLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +323,7 @@
 				9A2E193E1A1233DB001F6618 /* es */,
 				B5C9AE611A3B46F200082D01 /* zh-Hant */,
 				2D8897741A5A1F5200AE811F /* ko */,
+				EBF7EF5D1A66CF32004C5784 /* pt */,
 			);
 			name = DBPrivacyHelperLocalizable.strings;
 			sourceTree = "<group>";
