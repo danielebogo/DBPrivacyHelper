@@ -40,6 +40,12 @@ Privacy settings types:
 - **DBPrivacyTypeHomeKit**
 - **DBPrivacyTypeMotionActivity**
 - **DBPrivacyTypeContacts**
+- **DBPrivacyTypeNotifications**
+- **DBPrivacyTypeReminders**
+- **DBPrivacyTypeCalendars**
+- **DBPrivacyTypeMicrophone**
+- **DBPrivacyTypeTwitter**
+- **DBPrivacyTypeFacebook**
 
 ### iOS Target
 
@@ -47,7 +53,7 @@ Privacy settings types:
 
 ### Version
 
-0.5
+0.6
 
 ### Created by:
 
