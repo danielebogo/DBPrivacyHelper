@@ -30,7 +30,8 @@
     button.translatesAutoresizingMaskIntoConstraints = NO;
     button.backgroundColor = [UIColor colorWithWhite:0 alpha:.85];
     [button setTitle:@"Open" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(openHelper) forControlEvents:UIControlEventTouchUpInside];
+//    [button addTarget:self action:@selector(openHelper) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(openHelperToCustomize) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
     NSDictionary *views = NSDictionaryOfVariableBindings(bg, button);
@@ -65,7 +66,7 @@
         //customize the completion block of presentViewController:animated:completion:
     } didDismiss:^{
         //customize the completion block of dismissViewControllerAnimated:completion:
-    } useDefaultSettingPane:YES]; //If NO force to use DBPrivateHelperController instead of the default settings pane on iOS 8. Only for iOS 8. Default value is YES.
+    } useDefaultSettingPane:NO]; //If NO force to use DBPrivateHelperController instead of the default settings pane on iOS 8. Only for iOS 8. Default value is YES.
 }
 
 - (void) openNotificationHelper {

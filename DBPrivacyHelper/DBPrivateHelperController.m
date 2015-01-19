@@ -84,7 +84,7 @@
     _tableView.separatorColor = [UIColor clearColor];
     _tableView.tableHeaderView = titleLabel;
     _tableView.dataSource = _dataSource;
-    _tableView.delegate = self;
+    _tableView.delegate = _dataSource;
     _tableView.scrollEnabled = NO;
     [self.view addSubview:_tableView];
 

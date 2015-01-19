@@ -53,7 +53,7 @@ Privacy settings types:
 
 ### Version
 
-0.6
+0.6.1
 
 ### Created by:
 
