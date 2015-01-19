@@ -57,7 +57,15 @@ typedef NS_ENUM(NSUInteger, DBPrivacyType){
     /**
      *  Microphone
      */
-    DBPrivacyTypeMicrophone
+    DBPrivacyTypeMicrophone,
+    /**
+     *  Twitter
+     */
+    DBPrivacyTypeTwitter,
+    /**
+     *  Facebook
+     */
+    DBPrivacyTypeFacebook
 };
 
 @interface NSString (DBPrivacyHelper)

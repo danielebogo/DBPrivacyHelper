@@ -84,7 +84,13 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
                                            @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Reminders" localizedString]], @"icon":@"dbph_remindersIcon" }, @{ @"desc":[self typeAllowText:[@"Reminders" localizedString]], @"icon":@"dbph_switchIcon" }]},
               
               @(DBPrivacyTypeMicrophone):@{ @"header":[self headerText:[@"Microphone" localizedString]],
-                                            @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Microphone" localizedString]], @"icon":@"dbph_microphoneIcon" }, @{ @"desc":[self typeAllowText:[@"Microphone" localizedString]], @"icon":@"dbph_switchIcon" }]} };
+                                            @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Microphone" localizedString]], @"icon":@"dbph_microphoneIcon" }, @{ @"desc":[self typeAllowText:[@"Microphone" localizedString]], @"icon":@"dbph_switchIcon" }]},
+              
+              @(DBPrivacyTypeTwitter):@{ @"header":[self headerText:[@"Twitter" localizedString]],
+                                         @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Twitter" localizedString]], @"icon":@"dbph_twitterIcon" }, @{ @"desc":[self typeAllowText:[@"Twitter" localizedString]], @"icon":@"dbph_switchIcon" }]},
+              
+              @(DBPrivacyTypeFacebook):@{ @"header":[self headerText:[@"Facebook" localizedString]],
+                                          @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Facebook" localizedString]], @"icon":@"dbph_facebookIcon" }, @{ @"desc":[self typeAllowText:[@"Facebook" localizedString]], @"icon":@"dbph_switchIcon" }]} };
 }
 
 - (CGFloat) cellHeightForText:(NSString *)text {
