@@ -16,6 +16,11 @@
 "Motion Activity" = "Attività motoria";
 "Contacts" = "Contatti";
 "Notifications" = "Notifiche";
+"Reminders" = "Promemoria";
+"Calendars" = "Calendari";
+"Microphone" = "Microfono";
+"Twitter" = "Twitter";
+"Facebook" = "Facebook";
 
 "Allow access to \"%@\"\nwith these steps:" = "Abilita l'accesso a \"%@\"\nin questo modo:";
 

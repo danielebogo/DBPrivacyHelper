@@ -14,7 +14,7 @@
 		9AE88CFF1A10C4AE00086242 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE88CFE1A10C4AE00086242 /* AppDelegate.m */; };
 		9AE88D021A10C4AE00086242 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE88D011A10C4AE00086242 /* ViewController.m */; };
 		9AE88D161A10C4AE00086242 /* DBPrivacyHelperExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE88D151A10C4AE00086242 /* DBPrivacyHelperExampleTests.m */; };
-		9AE88D221A10C53900086242 /* AppAsets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AE88D211A10C53900086242 /* AppAsets.xcassets */; };
+		9AE88D221A10C53900086242 /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AE88D211A10C53900086242 /* AppAssets.xcassets */; };
 		9AE88D321A10FEA000086242 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9AE88D311A10FEA000086242 /* bg.jpg */; };
 		9AE88D431A11050D00086242 /* DBPrivacyHelperAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AE88D381A11050D00086242 /* DBPrivacyHelperAssets.xcassets */; };
 		9AE88D441A11050D00086242 /* DBPrivacyHelperLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AE88D3A1A11050D00086242 /* DBPrivacyHelperLocalizable.strings */; };
@@ -51,7 +51,7 @@
 		9AE88D0F1A10C4AE00086242 /* DBPrivacyHelperExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DBPrivacyHelperExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE88D141A10C4AE00086242 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AE88D151A10C4AE00086242 /* DBPrivacyHelperExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBPrivacyHelperExampleTests.m; sourceTree = "<group>"; };
-		9AE88D211A10C53900086242 /* AppAsets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAsets.xcassets; sourceTree = "<group>"; };
+		9AE88D211A10C53900086242 /* AppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAssets.xcassets; sourceTree = "<group>"; };
 		9AE88D311A10FEA000086242 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		9AE88D381A11050D00086242 /* DBPrivacyHelperAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DBPrivacyHelperAssets.xcassets; sourceTree = "<group>"; };
 		9AE88D3B1A11050D00086242 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 			children = (
 				9A59AE621A1A617600005D4A /* DBPrivacyHelper.podspec */,
 				9AE88D371A11050D00086242 /* DBPrivacyHelper */,
-				9AE88D211A10C53900086242 /* AppAsets.xcassets */,
+				9AE88D211A10C53900086242 /* AppAssets.xcassets */,
 				9AE88CFD1A10C4AE00086242 /* AppDelegate.h */,
 				9AE88CFE1A10C4AE00086242 /* AppDelegate.m */,
 				9AE88D001A10C4AE00086242 /* ViewController.h */,
@@ -260,7 +260,7 @@
 			files = (
 				9AE88D441A11050D00086242 /* DBPrivacyHelperLocalizable.strings in Resources */,
 				9A59AE631A1A617600005D4A /* DBPrivacyHelper.podspec in Resources */,
-				9AE88D221A10C53900086242 /* AppAsets.xcassets in Resources */,
+				9AE88D221A10C53900086242 /* AppAssets.xcassets in Resources */,
 				9AE88D321A10FEA000086242 /* bg.jpg in Resources */,
 				9AE88D431A11050D00086242 /* DBPrivacyHelperAssets.xcassets in Resources */,
 				9AD85B161A5C8861003F80D6 /* testIcon.png in Resources */,

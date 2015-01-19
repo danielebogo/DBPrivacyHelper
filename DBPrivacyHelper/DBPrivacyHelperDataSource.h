@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "DBPrivateHelperCell.h"
+
 /**
  *  Privacy Types
  */
@@ -43,14 +45,26 @@ typedef NS_ENUM(NSUInteger, DBPrivacyType){
     /**
      *  Push Notifications
      */
-    DBPrivacyTypeNotifications
+    DBPrivacyTypeNotifications,
+    /**
+     *  Reminders
+     */
+    DBPrivacyTypeReminders,
+    /**
+     *  Calendars
+     */
+    DBPrivacyTypeCalendars,
+    /**
+     *  Microphone
+     */
+    DBPrivacyTypeMicrophone
 };
 
 @interface NSString (DBPrivacyHelper)
 - (NSString *) localizedString;
 @end
 
-@interface DBPrivacyHelperDataSource : NSObject
+@interface DBPrivacyHelperDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 
 /**
  *  Personal App Icon name for DBPrivacyTypeNotifications
@@ -61,4 +75,9 @@ typedef NS_ENUM(NSUInteger, DBPrivacyType){
  *  DBPrivacyHelper data dictionary
  */
 @property (nonatomic, readonly) NSDictionary *cellData;
+
+/**
+ *  DBPrivacy type selected
+ */
+@property (nonatomic, assign) DBPrivacyType type;
 @end

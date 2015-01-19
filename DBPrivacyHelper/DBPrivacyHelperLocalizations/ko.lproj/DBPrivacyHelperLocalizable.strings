@@ -8,12 +8,19 @@
 
 "Close" = "닫기";
 
-"Location Services" = "위치 서비스;
+"Location Services" = "위치 서비스";
 "Photos" = "사진";
 "Camera" = "카메라";
 "Health" = "건강";
 "HomeKit" = "HomeKit";
 "Motion Activity" = "동작 활동";
+"Contacts" = "Contacts"; // Must be translate
+"Notifications" = "Notifications"; // Must be translate
+"Reminders" = "Reminders"; // Must be translate
+"Calendars" = "Calendars"; // Must be translate
+"Microphone" = "Microphone"; // Must be translate
+"Twitter" = "Twitter";
+"Facebook" = "Facebook";
 
 "Allow access to \"%@\"\nwith these steps:" = "다음과 같은 순서로 \"%@\"\n 접근 허락";
 
@@ -21,3 +28,4 @@
 "Tap on Privacy" = "개인 정보 보호 터치";
 "Tap on \"%@\"" = "\"%@\" 터치 ";
 "Allow your application to use \"%@\"" = "어플리케이션의 \"%@\" 사용 허락";
+"Select the alert style you prefer" = "Select the alert style you prefer"; // Must be translate

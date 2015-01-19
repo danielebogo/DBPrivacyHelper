@@ -8,15 +8,13 @@
 
 #import "DBPrivateHelperController.h"
 #import "DBPrivacyHelperDataSource.h"
-#import "DBPrivateHelperCell.h"
 #import "UIImage+ImageEffects.h"
 
-@interface DBPrivateHelperController () <UITableViewDataSource, UITableViewDelegate> {
+@interface DBPrivateHelperController () <UITableViewDelegate> {
     DBPrivacyType _type;
     DBPrivacyHelperDataSource *_dataSource;
     UIImageView *_backgroundImage;
     UITableView *_tableView;
-    NSDictionary *_cellAttributes;
 }
 @end
 
@@ -32,12 +30,6 @@
         _type = type;
         _canRotate = NO;
         _statusBarStyle = UIStatusBarStyleLightContent;
-        
-        NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-        paragraphStyle.alignment = NSTextAlignmentLeft;
-
-        _cellAttributes = @{ NSFontAttributeName:[UIFont boldSystemFontOfSize:12.0], NSParagraphStyleAttributeName:paragraphStyle };
     }
     return self;
 }
@@ -49,6 +41,7 @@
     
     _dataSource = [DBPrivacyHelperDataSource new];
     _dataSource.appIcon = self.appIcon;
+    _dataSource.type = _type;
     
     _backgroundImage = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     _backgroundImage.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -90,7 +83,7 @@
     _tableView.backgroundView = nil;
     _tableView.separatorColor = [UIColor clearColor];
     _tableView.tableHeaderView = titleLabel;
-    _tableView.dataSource = self;
+    _tableView.dataSource = _dataSource;
     _tableView.delegate = self;
     _tableView.scrollEnabled = NO;
     [self.view addSubview:_tableView];
@@ -128,35 +121,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (CGFloat) cellHeightForText:(NSString *)text {
-    CGFloat width = CGRectGetWidth(_tableView.frame) - 120.0;
-    CGRect bounds = [text boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin
-                                    attributes:_cellAttributes context:NULL];
-
-    CGFloat height = roundf(CGRectGetHeight(bounds) + 20);
-    return ( height > 60.0 ) ? height + 10 : 60.0;
-}
-
-#pragma mark - UITableViewDataSource
-
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_dataSource.cellData[@(_type)][@"steps"] count];
-}
-
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DBPrivateHelperCell *cell = [tableView dequeueReusableCellWithIdentifier:[DBPrivateHelperCell identifier]];
-    [cell setIcon:_dataSource.cellData[@(_type)][@"steps"][indexPath.row][@"icon"]
-             text:_dataSource.cellData[@(_type)][@"steps"][indexPath.row][@"desc"]
-              row:indexPath.row + 1];
-    return cell;
-}
-
-#pragma mark - UITableViewDelegate
-
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self cellHeightForText:_dataSource.cellData[@(_type)][@"steps"][indexPath.row][@"desc"]];
 }
 
 #pragma mark - Status Bar Style

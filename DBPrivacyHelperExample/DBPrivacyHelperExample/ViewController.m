@@ -53,7 +53,7 @@
 }
 
 - (void) openHelper {
-    static DBPrivacyType type, typeCount = DBPrivacyTypeNotifications + 1;
+    static DBPrivacyType type, typeCount = DBPrivacyTypeMicrophone + 1;
     [self showPrivacyHelperForType:type];
     type = (type + 1) % typeCount;
 }
