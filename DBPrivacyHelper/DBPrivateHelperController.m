@@ -92,7 +92,7 @@
     _closeButton.translatesAutoresizingMaskIntoConstraints = NO;
     _closeButton.titleLabel.font = [UIFont boldSystemFontOfSize:12.0];
     _closeButton.backgroundColor = [UIColor clearColor];
-    [_closeButton setTitle:[@"Close" localizedString].uppercaseString forState:UIControlStateNormal];
+    [_closeButton setTitle:[@"Close" dbph_LocalizedString].uppercaseString forState:UIControlStateNormal];
     [_closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_closeButton addTarget:self action:@selector(dismissHelper:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_closeButton];

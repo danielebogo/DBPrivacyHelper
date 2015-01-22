@@ -69,7 +69,7 @@ typedef NS_ENUM(NSUInteger, DBPrivacyType){
 };
 
 @interface NSString (DBPrivacyHelper)
-- (NSString *) localizedString;
+- (NSString *) dbph_LocalizedString;
 @end
 
 @interface DBPrivacyHelperDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>

@@ -15,7 +15,7 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
 
 @implementation NSString (DBPrivacyHelper)
 
-- (NSString *) localizedString {
+- (NSString *) dbph_LocalizedString {
     return DBPrivacyHelperLocalizableStrings(self);
 }
 
@@ -41,56 +41,56 @@ NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
 }
 
 - (NSString *) headerText:(NSString *)string {
-    return [NSString stringWithFormat:[@"Allow access to \"%@\"\nwith these steps:" localizedString], string];
+    return [NSString stringWithFormat:[@"Allow access to \"%@\"\nwith these steps:" dbph_LocalizedString], string];
 }
 
 - (NSString *) typeTitle:(NSString *)string {
-    return [NSString stringWithFormat:[@"Tap on \"%@\"" localizedString], string];
+    return [NSString stringWithFormat:[@"Tap on \"%@\"" dbph_LocalizedString], string];
 }
 
 - (NSString *) typeAllowText:(NSString *)string {
-    return [NSString stringWithFormat:[@"Allow your application to use \"%@\"" localizedString], string];
+    return [NSString stringWithFormat:[@"Allow your application to use \"%@\"" dbph_LocalizedString], string];
 }
 
 - (NSDictionary *) cellData {
-    return @{ @(DBPrivacyTypePhoto):@{ @"header":[self headerText:[@"Photos" localizedString]],
-                                       @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Photos" localizedString]], @"icon":@"dbph_photoIcon" }, @{ @"desc":[self typeAllowText:[@"Photos" localizedString]], @"icon":@"dbph_switchIcon" }]},
+    return @{ @(DBPrivacyTypePhoto):@{ @"header":[self headerText:[@"Photos" dbph_LocalizedString]],
+                                       @"steps":@[ @{ @"desc":[@"Open device settings" dbph_LocalizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" dbph_LocalizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Photos" dbph_LocalizedString]], @"icon":@"dbph_photoIcon" }, @{ @"desc":[self typeAllowText:[@"Photos" dbph_LocalizedString]], @"icon":@"dbph_switchIcon" }]},
               
-              @(DBPrivacyTypeCamera):@{ @"header":[self headerText:[@"Camera" localizedString]],
-                                        @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Camera" localizedString]], @"icon":@"dbph_cameraIcon" }, @{ @"desc":[self typeAllowText:[@"Camera" localizedString]], @"icon":@"dbph_switchIcon" }]},
+              @(DBPrivacyTypeCamera):@{ @"header":[self headerText:[@"Camera" dbph_LocalizedString]],
+                                        @"steps":@[ @{ @"desc":[@"Open device settings" dbph_LocalizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" dbph_LocalizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Camera" dbph_LocalizedString]], @"icon":@"dbph_cameraIcon" }, @{ @"desc":[self typeAllowText:[@"Camera" dbph_LocalizedString]], @"icon":@"dbph_switchIcon" }]},
               
-              @(DBPrivacyTypeLocation):@{ @"header":[self headerText:[@"Location Services" localizedString]],
-                                          @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Location Services" localizedString]], @"icon":@"dbph_localizationIcon" }, @{ @"desc":[self typeAllowText:[@"Location Services" localizedString]], @"icon":@"dbph_checkIcon" }]},
+              @(DBPrivacyTypeLocation):@{ @"header":[self headerText:[@"Location Services" dbph_LocalizedString]],
+                                          @"steps":@[ @{ @"desc":[@"Open device settings" dbph_LocalizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" dbph_LocalizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Location Services" dbph_LocalizedString]], @"icon":@"dbph_localizationIcon" }, @{ @"desc":[self typeAllowText:[@"Location Services" dbph_LocalizedString]], @"icon":@"dbph_checkIcon" }]},
               
-              @(DBPrivacyTypeHealth):@{ @"header":[self headerText:[@"Health" localizedString]],
-                                        @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Health" localizedString]], @"icon":@"dbph_healthIcon" }, @{ @"desc":[self typeAllowText:[@"Health" localizedString]], @"icon":@"dbph_switchIcon" }]},
+              @(DBPrivacyTypeHealth):@{ @"header":[self headerText:[@"Health" dbph_LocalizedString]],
+                                        @"steps":@[ @{ @"desc":[@"Open device settings" dbph_LocalizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" dbph_LocalizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Health" dbph_LocalizedString]], @"icon":@"dbph_healthIcon" }, @{ @"desc":[self typeAllowText:[@"Health" dbph_LocalizedString]], @"icon":@"dbph_switchIcon" }]},
               
-              @(DBPrivacyTypeHomeKit):@{ @"header":[self headerText:[@"HomeKit" localizedString]],
-                                         @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"HomeKit" localizedString]], @"icon":@"dbph_homekitIcon" }, @{ @"desc":[self typeAllowText:[@"HomeKit" localizedString]], @"icon":@"dbph_switchIcon" }]},
+              @(DBPrivacyTypeHomeKit):@{ @"header":[self headerText:[@"HomeKit" dbph_LocalizedString]],
+                                         @"steps":@[ @{ @"desc":[@"Open device settings" dbph_LocalizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" dbph_LocalizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"HomeKit" dbph_LocalizedString]], @"icon":@"dbph_homekitIcon" }, @{ @"desc":[self typeAllowText:[@"HomeKit" dbph_LocalizedString]], @"icon":@"dbph_switchIcon" }]},
               
-              @(DBPrivacyTypeMotionActivity):@{ @"header":[self headerText:[@"Motion Activity" localizedString]],
-                                                @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Motion Activity" localizedString]], @"icon":@"dbph_motionIcon" }, @{ @"desc":[self typeAllowText:[@"Motion Activity" localizedString]], @"icon":@"dbph_switchIcon" }]},
+              @(DBPrivacyTypeMotionActivity):@{ @"header":[self headerText:[@"Motion Activity" dbph_LocalizedString]],
+                                                @"steps":@[ @{ @"desc":[@"Open device settings" dbph_LocalizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" dbph_LocalizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Motion Activity" dbph_LocalizedString]], @"icon":@"dbph_motionIcon" }, @{ @"desc":[self typeAllowText:[@"Motion Activity" dbph_LocalizedString]], @"icon":@"dbph_switchIcon" }]},
               
-              @(DBPrivacyTypeContacts):@{ @"header":[self headerText:[@"Contacts" localizedString]],
-                                          @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Contacts" localizedString]], @"icon":@"dbph_contactsIcon" }, @{ @"desc":[self typeAllowText:[@"Contacts" localizedString]], @"icon":@"dbph_switchIcon" }]},
+              @(DBPrivacyTypeContacts):@{ @"header":[self headerText:[@"Contacts" dbph_LocalizedString]],
+                                          @"steps":@[ @{ @"desc":[@"Open device settings" dbph_LocalizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" dbph_LocalizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Contacts" dbph_LocalizedString]], @"icon":@"dbph_contactsIcon" }, @{ @"desc":[self typeAllowText:[@"Contacts" dbph_LocalizedString]], @"icon":@"dbph_switchIcon" }]},
               
-              @(DBPrivacyTypeNotifications):@{ @"header":[self headerText:[@"Notifications" localizedString]],
-                                               @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[self typeTitle:[@"Notifications" localizedString]], @"icon":@"dbph_notificationsIcon" }, @{ @"desc":[self typeTitle:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"]], @"icon":self.appIcon ?: @"dbph_appIcon" }, @{ @"desc":[self typeAllowText:[@"Notifications" localizedString]], @"icon":@"dbph_switchIcon" }, @{ @"desc":[@"Select the alert style you prefer" localizedString], @"icon":@"dbph_alertIcon" }]},
+              @(DBPrivacyTypeNotifications):@{ @"header":[self headerText:[@"Notifications" dbph_LocalizedString]],
+                                               @"steps":@[ @{ @"desc":[@"Open device settings" dbph_LocalizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[self typeTitle:[@"Notifications" dbph_LocalizedString]], @"icon":@"dbph_notificationsIcon" }, @{ @"desc":[self typeTitle:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"]], @"icon":self.appIcon ?: @"dbph_appIcon" }, @{ @"desc":[self typeAllowText:[@"Notifications" dbph_LocalizedString]], @"icon":@"dbph_switchIcon" }, @{ @"desc":[@"Select the alert style you prefer" dbph_LocalizedString], @"icon":@"dbph_alertIcon" }]},
 
-              @(DBPrivacyTypeCalendars):@{ @"header":[self headerText:[@"Calendars" localizedString]],
-                                           @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Calendars" localizedString]], @"icon":@"dbph_calendarsIcon" }, @{ @"desc":[self typeAllowText:[@"Calendars" localizedString]], @"icon":@"dbph_switchIcon" }]},
+              @(DBPrivacyTypeCalendars):@{ @"header":[self headerText:[@"Calendars" dbph_LocalizedString]],
+                                           @"steps":@[ @{ @"desc":[@"Open device settings" dbph_LocalizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" dbph_LocalizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Calendars" dbph_LocalizedString]], @"icon":@"dbph_calendarsIcon" }, @{ @"desc":[self typeAllowText:[@"Calendars" dbph_LocalizedString]], @"icon":@"dbph_switchIcon" }]},
               
-              @(DBPrivacyTypeReminders):@{ @"header":[self headerText:[@"Reminders" localizedString]],
-                                           @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Reminders" localizedString]], @"icon":@"dbph_remindersIcon" }, @{ @"desc":[self typeAllowText:[@"Reminders" localizedString]], @"icon":@"dbph_switchIcon" }]},
+              @(DBPrivacyTypeReminders):@{ @"header":[self headerText:[@"Reminders" dbph_LocalizedString]],
+                                           @"steps":@[ @{ @"desc":[@"Open device settings" dbph_LocalizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" dbph_LocalizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Reminders" dbph_LocalizedString]], @"icon":@"dbph_remindersIcon" }, @{ @"desc":[self typeAllowText:[@"Reminders" dbph_LocalizedString]], @"icon":@"dbph_switchIcon" }]},
               
-              @(DBPrivacyTypeMicrophone):@{ @"header":[self headerText:[@"Microphone" localizedString]],
-                                            @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Microphone" localizedString]], @"icon":@"dbph_microphoneIcon" }, @{ @"desc":[self typeAllowText:[@"Microphone" localizedString]], @"icon":@"dbph_switchIcon" }]},
+              @(DBPrivacyTypeMicrophone):@{ @"header":[self headerText:[@"Microphone" dbph_LocalizedString]],
+                                            @"steps":@[ @{ @"desc":[@"Open device settings" dbph_LocalizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" dbph_LocalizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Microphone" dbph_LocalizedString]], @"icon":@"dbph_microphoneIcon" }, @{ @"desc":[self typeAllowText:[@"Microphone" dbph_LocalizedString]], @"icon":@"dbph_switchIcon" }]},
               
-              @(DBPrivacyTypeTwitter):@{ @"header":[self headerText:[@"Twitter" localizedString]],
-                                         @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Twitter" localizedString]], @"icon":@"dbph_twitterIcon" }, @{ @"desc":[self typeAllowText:[@"Twitter" localizedString]], @"icon":@"dbph_switchIcon" }]},
+              @(DBPrivacyTypeTwitter):@{ @"header":[self headerText:[@"Twitter" dbph_LocalizedString]],
+                                         @"steps":@[ @{ @"desc":[@"Open device settings" dbph_LocalizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" dbph_LocalizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Twitter" dbph_LocalizedString]], @"icon":@"dbph_twitterIcon" }, @{ @"desc":[self typeAllowText:[@"Twitter" dbph_LocalizedString]], @"icon":@"dbph_switchIcon" }]},
               
-              @(DBPrivacyTypeFacebook):@{ @"header":[self headerText:[@"Facebook" localizedString]],
-                                          @"steps":@[ @{ @"desc":[@"Open device settings" localizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" localizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Facebook" localizedString]], @"icon":@"dbph_facebookIcon" }, @{ @"desc":[self typeAllowText:[@"Facebook" localizedString]], @"icon":@"dbph_switchIcon" }]} };
+              @(DBPrivacyTypeFacebook):@{ @"header":[self headerText:[@"Facebook" dbph_LocalizedString]],
+                                          @"steps":@[ @{ @"desc":[@"Open device settings" dbph_LocalizedString], @"icon":@"dbph_settingsIcon" }, @{ @"desc":[@"Tap on Privacy" dbph_LocalizedString], @"icon":@"dbph_privacyIcon" }, @{ @"desc":[self typeTitle:[@"Facebook" dbph_LocalizedString]], @"icon":@"dbph_facebookIcon" }, @{ @"desc":[self typeAllowText:[@"Facebook" dbph_LocalizedString]], @"icon":@"dbph_switchIcon" }]} };
 }
 
 - (CGFloat) cellHeightForText:(NSString *)text {
