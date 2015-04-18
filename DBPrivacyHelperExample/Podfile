@@ -1,0 +1,14 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+target 'DBPrivacyHelperExample' do
+
+end
+
+target 'DBPrivacyHelperExampleTests' do
+
+pod 'FBSnapshotTestCase'
+pod 'OCMock'
+
+end
+
