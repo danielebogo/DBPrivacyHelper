@@ -1,0 +1,31 @@
+/*
+ DBPrivacyHelperLocalizable.strings
+ DBPrivacyHelper
+
+ Created by hmhv on 22/04/15.
+ Copyright (c) 2015 hmhv. All rights reserved.
+*/
+
+"Close" = "閉じる";
+
+"Location Services" = "位置情報サービス";
+"Photos" = "写真";
+"Camera" = "カメラ";
+"Health" = "ヘルスケア";
+"HomeKit" = "HomeKit";
+"Motion Activity" = "モーションとフィットネス";
+"Contacts" = "連絡先";
+"Notifications" = "通知";
+"Reminders" = "リマインダー";
+"Calendars" = "カレンダー";
+"Microphone" = "マイク";
+"Twitter" = "Twitter";
+"Facebook" = "Facebook";
+
+"Allow access to \"%@\"\nwith these steps:" = "以下の順で\"%@\"へのアクセスを\n許可してください。";
+
+"Open device settings" = "設定アプリをタップ";
+"Tap on Privacy" = "プライバシーをタップ";
+"Tap on \"%@\"" = "\"%@\"をタップ";
+"Allow your application to use \"%@\"" = "アプリの\"%@\"へのアクセスを許可";
+"Select the alert style you prefer" = "好みの通知スタイルを選択";

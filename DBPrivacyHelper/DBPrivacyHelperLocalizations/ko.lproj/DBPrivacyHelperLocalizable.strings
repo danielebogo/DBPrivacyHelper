@@ -14,11 +14,11 @@
 "Health" = "건강";
 "HomeKit" = "HomeKit";
 "Motion Activity" = "동작 활동";
-"Contacts" = "Contacts"; // Must be translate
-"Notifications" = "Notifications"; // Must be translate
-"Reminders" = "Reminders"; // Must be translate
-"Calendars" = "Calendars"; // Must be translate
-"Microphone" = "Microphone"; // Must be translate
+"Contacts" = "연락처";
+"Notifications" = "알림";
+"Reminders" = "미리 알림";
+"Calendars" = "캘린더";
+"Microphone" = "마이크";
 "Twitter" = "Twitter";
 "Facebook" = "Facebook";
 
@@ -27,5 +27,5 @@
 "Open device settings" = "기기 설정 열기";
 "Tap on Privacy" = "개인 정보 보호 터치";
 "Tap on \"%@\"" = "\"%@\" 터치 ";
-"Allow your application to use \"%@\"" = "어플리케이션의 \"%@\" 사용 허락";
-"Select the alert style you prefer" = "Select the alert style you prefer"; // Must be translate
+"Allow your application to use \"%@\"" = "어플리케이션의 \"%@\" 접근 허락";
+"Select the alert style you prefer" = "원하는 알림 스타일을 선택";
