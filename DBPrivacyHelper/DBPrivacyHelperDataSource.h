@@ -68,9 +68,13 @@ typedef NS_ENUM(NSUInteger, DBPrivacyType){
     DBPrivacyTypeFacebook
 };
 
+
+
 @interface NSString (DBPrivacyHelper)
-- (NSString *) dbph_LocalizedString;
+- (NSString *)dbph_LocalizedString;
 @end
+
+
 
 @interface DBPrivacyHelperDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 

@@ -9,15 +9,23 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
+#import "UIViewController+DBPrivacyHelper.h"
+
 @interface DBPrivacyHelperExampleTests : XCTestCase
 
 @end
 
-@implementation DBPrivacyHelperExampleTests
+@implementation DBPrivacyHelperExampleTests {
+    UIViewController *baseVc_;
+}
 
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    baseVc_ = [[UIViewController alloc] init];
+    baseVc_.view.backgroundColor = [UIColor redColor];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:baseVc_];
 }
 
 - (void)tearDown {
@@ -25,16 +33,11 @@
     [super tearDown];
 }
 
-- (void)testExample {
+- (void)testSnapshot {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+    UIImage *snapshot = [baseVc_ snapshot];
+    
+    XCTAssertTrue([snapshot isKindOfClass:[UIImage class]], @"Should be an image");
 }
 
 @end

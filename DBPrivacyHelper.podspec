@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/danielebogo/DBPrivacyHelper.git", :tag => "0.6.2" }
 
   s.source_files = "DBPrivacyHelper/*.{h,m}"
-  s.resources    = ['DBPrivacyHelper/*.{xib,xcassets}', 'DBPrivacyHelper/DBPrivacyHelperLocalizations/**']
+  s.resources    = ['DBPrivacyHelper/*.xcassets', 'DBPrivacyHelper/DBPrivacyHelperLocalizations/**']
 
   s.frameworks   = "UIKit", "Foundation"
   s.requires_arc = true

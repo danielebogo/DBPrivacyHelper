@@ -8,14 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DBPrivateHelperCell : UITableViewCell
-/**
- *  Reuse Identifier for cell
- *
- *  @return An instance type of DBPrivateHelperCell
- */
-+ (NSString *) identifier;
+extern NSString *const kDBPrivateHelperCellIdentifier;
 
+
+@interface DBPrivateHelperCell : UITableViewCell
 /**
  *  Set the cell values
  *
@@ -23,5 +19,5 @@
  *  @param text The description text
  *  @param row  The row number
  */
-- (void) setIcon:(NSString *)icon text:(NSString *)text row:(NSInteger)row;
+- (void)setIcon:(NSString *)icon text:(NSString *)text row:(NSInteger)row;
 @end

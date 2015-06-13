@@ -56,5 +56,5 @@ typedef void (^DBPrivateHelperCompletionBlock)();
  *
  *  @return An instance of DBPrivateHelperController
  */
-+ (instancetype) helperForType:(DBPrivacyType)type;
++ (instancetype)helperForType:(DBPrivacyType)type;
 @end

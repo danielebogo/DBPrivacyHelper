@@ -8,21 +8,19 @@
 
 #import "DBPrivateHelperCell.h"
 
-@interface DBPrivateHelperCell () {
+NSString *const kDBPrivateHelperCellIdentifier = @"kDBPrivateHelperCellIdentifier";
+
+
+@implementation DBPrivateHelperCell {
     UIImageView *_iconView;
     UILabel *_cellLabel;
 }
-@end
 
-@implementation DBPrivateHelperCell
 
-+ (NSString *) identifier {
-    return @"kDBPrivateHelperCellIdentifier";
-}
-
-- (instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+- (instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if ( self ) {
+    if (self) {
         self.backgroundColor = [UIColor clearColor];
         self.contentView.backgroundColor = self.backgroundColor;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -56,7 +54,8 @@
     return self;
 }
 
-- (void) setIcon:(NSString *)icon text:(NSString *)text row:(NSInteger)row {
+- (void)setIcon:(NSString *)icon text:(NSString *)text row:(NSInteger)row
+{
     _iconView.image = [UIImage imageNamed:icon];
     _cellLabel.text = text;
     self.textLabel.text = [NSString stringWithFormat:@".%li", (long)row];

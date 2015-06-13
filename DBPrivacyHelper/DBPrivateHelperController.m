@@ -20,13 +20,17 @@
 
 @implementation DBPrivateHelperController
 
-+ (instancetype) helperForType:(DBPrivacyType)type {
-    return [[[self class] alloc] initWithPrivacyType:type];
+#pragma mark - Life cycle
+
++ (instancetype)helperForType:(DBPrivacyType)type
+{
+    return [[self.class alloc] initWithPrivacyType:type];
 }
 
-- (id) initWithPrivacyType:(DBPrivacyType)type {
+- (instancetype)initWithPrivacyType:(DBPrivacyType)type
+{
     self = [super init];
-    if ( self ) {
+    if (self) {
         _type = type;
         _canRotate = NO;
         _statusBarStyle = UIStatusBarStyleLightContent;
@@ -34,7 +38,8 @@
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
@@ -77,7 +82,7 @@
     titleLabel.numberOfLines = 2;
 
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    [_tableView registerClass:[DBPrivateHelperCell class] forCellReuseIdentifier:[DBPrivateHelperCell identifier]];
+    [_tableView registerClass:[DBPrivateHelperCell class] forCellReuseIdentifier:kDBPrivateHelperCellIdentifier];
     _tableView.translatesAutoresizingMaskIntoConstraints = NO;
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.backgroundView = nil;
@@ -94,7 +99,7 @@
     _closeButton.backgroundColor = [UIColor clearColor];
     [_closeButton setTitle:[@"Close" dbph_LocalizedString].uppercaseString forState:UIControlStateNormal];
     [_closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_closeButton addTarget:self action:@selector(dismissHelper:) forControlEvents:UIControlEventTouchUpInside];
+    [_closeButton addTarget:self action:@selector(bdph_dismissHelper:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_closeButton];
 
     NSDictionary *views = NSDictionaryOfVariableBindings(_tableView, _closeButton);
@@ -104,39 +109,52 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_closeButton(30)]-0-[_tableView]-0-|" options:0 metrics:nil views:views]];
 }
 
-- (void) dismissHelper:(UIButton *)button {
-    [self dismissViewControllerAnimated:YES completion:self.didDismissViewController];
-}
-
-- (void) viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
-- (void) viewDidDisappear:(BOOL)animated {
+- (void)viewDidDisappear:(BOOL)animated
+{
     [super viewDidDisappear:animated];
     self.snapshot = nil;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - Private methods
+
+- (void)bdph_dismissHelper:(UIButton *)button
+{
+    [self dismissViewControllerAnimated:YES completion:self.didDismissViewController];
+}
+
+
 #pragma mark - Status Bar Style
 
-- (UIStatusBarStyle) preferredStatusBarStyle {
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
     return self.statusBarStyle;
 }
 
+
 #pragma mark - ViewController Rotation
 
-- (BOOL) shouldAutorotate {
+- (BOOL)shouldAutorotate
+{
     return self.canRotate;
 }
 
-- (NSUInteger) supportedInterfaceOrientations {
+- (NSUInteger)supportedInterfaceOrientations
+{
     return UIInterfaceOrientationMaskAll;
 }
+
 
 @end
